@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem;
   min-height: 100vh;
 }
 
@@ -16,6 +16,7 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+  margin-right: 24px;
 }
 
 .description a {
@@ -46,12 +47,21 @@
   width: var(--max-width);
 }
 
+.grid_center{
+  place-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(25%, auto));
+  max-width: 100%;
+  width: var(--max-width);
+  gap:6px
+}
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
+  background: rgba(var(--card-rgb), 10);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  width: 300px
 }
 
 .card span {
@@ -61,7 +71,15 @@
 
 .card h2 {
   font-weight: 600;
-  margin-bottom: 0.7rem;
+}
+
+.color_frame{
+  width: 240px;
+  height: 240px;
+  display: grid;
+  place-items: center;
+  border: 4px solid gray;
+  border-radius: 8px;
 }
 
 .card p {
@@ -81,29 +99,7 @@
   padding: 4rem 0;
 }
 
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
-}
 
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
-
-.center::before,
-.center::after {
-  content: "";
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
-}
 
 .logo {
   position: relative;
@@ -111,7 +107,7 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
+    background: rgba(var(--card-rgb), 0.5);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 
@@ -128,8 +124,17 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main{
+    padding: 2rem 0;
+  }
   .content {
     padding: 4rem;
+  }
+
+  .grid_center {
+    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
+    padding-bottom: 2rem;
   }
 
   .grid {
@@ -193,7 +198,6 @@
     pointer-events: none;
     inset: auto 0 0;
     padding: 2rem;
-    height: 200px;
     background: linear-gradient(
       to bottom,
       transparent 0%,
