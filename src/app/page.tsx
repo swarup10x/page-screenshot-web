@@ -79,7 +79,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            by Swarup
+            github/swarup10x
             
           </a>
         </div>

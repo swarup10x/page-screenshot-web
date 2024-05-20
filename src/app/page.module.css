@@ -58,10 +58,11 @@
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 10);
+  background: #04AA6D;
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
-  width: 300px
+  width: 300px;
+  color: white;
 }
 
 .card span {
@@ -107,7 +108,7 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(var(--card-rgb), 0.5);
+    background:#5a4caf;
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 
